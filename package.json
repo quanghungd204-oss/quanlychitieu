@@ -5,8 +5,8 @@
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "NODE_ENV=development nodemon server.js",
-    "seed": "NODE_ENV=development node seed.js",
+    "dev": "cross-env NODE_ENV=development nodemon server.js",
+    "seed": "cross-env NODE_ENV=development node seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -24,6 +24,7 @@
     "mongoose": "^7.0.0"
   },
   "devDependencies": {
+    "cross-env": "^10.1.0",
     "nodemon": "^3.0.1"
   }
 }

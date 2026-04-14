@@ -2,21 +2,12 @@ const mongoose = require('mongoose');
 
 const connectDB = async () => {
   try {
-    let uri;
-    
-    // Nếu là production (Railway), dùng MONGODB_URI từ Railway
-    if (process.env.NODE_ENV === 'production') {
-      uri = process.env.MONGODB_URI;
-    } else {
-      // Local development, dùng MongoDB local
-      uri = process.env.MONGODB_URI || 'mongodb://localhost:27017/quanlychitieu';
-    }
+    const uri = process.env.MONGODB_URI;
     
     if (!uri) {
-      throw new Error('MONGODB_URI not configured');
+      throw new Error('MONGODB_URI không được cấu hình trong .env');
     }
     
-    console.log(`🔗 Connecting to: ${uri.split('://')[0]}://...`);
     await mongoose.connect(uri, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
