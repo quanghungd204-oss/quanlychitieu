@@ -1,5 +1,5 @@
 // API Base URL
-const API_BASE_URL = 'http://localhost:5000/api';
+const API_BASE_URL = 'https://quanlychitieu-app.up.railway.app/api';
 
 // Lưu và lấy token từ localStorage
 const getToken = () => localStorage.getItem('token');
